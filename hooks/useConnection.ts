@@ -3,11 +3,13 @@ import io from "socket.io-client";
 import useCustomPersonality from "./usePersonality";
 import useMessages from "./useMessages";
 import useUser from "./useUser";
+import useOpenAiApiKey from "./useOpenAIApiKey";
 
 const socket = io(`${process.env.NEXT_PUBLIC_WS_HOST}`);
 const useConnection = () => {
   const { updateMessageBody } = useMessages();
   const { personality } = useCustomPersonality();
+  const { openAiApiKey } = useOpenAiApiKey();
   const { user } = useUser();
   const [isConnected, setIsConnected] = useState(socket.connected);
   const onResponse = (messageResponse: MessageResponse) => {
@@ -53,6 +55,7 @@ const useConnection = () => {
     const eventDataWithUser = {
       ...eventData,
       userId: user.id,
+      openAiApiKey,
     };
 
     if (personality.text.length) {
