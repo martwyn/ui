@@ -1,0 +1,27 @@
+.bubble {
+  @apply rounded-3xl;
+}
+
+.user.same-prev-author:not(.time-before) .bubble {
+  @apply rounded-tl-none;
+}
+
+.martwyn.same-prev-author:not(.time-before) .bubble {
+  @apply rounded-tr-none;
+}
+
+.user.same-next-author .bubble {
+  @apply rounded-bl-none;
+}
+
+.martwyn.same-next-author .bubble {
+  @apply rounded-br-none;
+}
+
+.user.same-next-author.time-after .bubble {
+  @apply rounded-bl-3xl;
+}
+
+.martwyn.same-next-author.time-after .bubble {
+  @apply rounded-br-3xl;
+}

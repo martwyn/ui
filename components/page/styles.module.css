@@ -1,0 +1,5 @@
+.container {
+  @apply bg-main-bg;
+  @apply text-text-primary;
+  min-height: 100vh;
+}

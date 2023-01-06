@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default to dark mode + blue accent*/
+:root {
+  --overlay-bg: #9ea0aa;
+  --main-bg: #282a36;
+  --card-bg: #323643;
+  --chat-section-bg: #323643;
+  --chat-author-bg: #424654;
+  --chat-author-text: #fff;
+  --chat-bot-bg: #458eed;
+  --chat-bot-text: #fff;
+  --text-primary: #fff;
+  --text-secondary: #9ea0aa;
+  --icon: #757887;
+  --icon-hover: #458eed;
+  --tooltip-bg: #fff;
+  --tooltip-text: #282a36;
+  --spinner-bg: #fff;
+  --spinner-fg: #757887;
+  --input-bg: #424654;
+  --input-focus-border: #458eed;
+  --input-text: #282a36;
+  --button-bg: #458eed;
+  --button-border: #458eed;
+  --button-text: #fff;
+  --button-focus-bg: #fff;
+  --button-focus-text: #458eed;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'!important;
+}
+
+@supports (font-variation-settings: normal) {
+  html, body { font-family: "Inter var", "system-ui"; }
+}
+
+.content {
+  @apply mx-auto max-w-7xl px-4 w-full;
+}
+
+.absolute-center {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+}

@@ -1,0 +1,83 @@
+.dark {
+  --overlay-bg: #9ea0aa;
+  --main-bg: #282a36;
+  --card-bg: #323643;
+  --chat-section-bg: #323643;
+  --chat-author-text: #fff;
+  --chat-author-bg: #424654;
+  --text-primary: #fff;
+  --text-secondary: #9ea0aa;
+  --icon: #757887;
+  --icon-hover: #fff;
+  --tooltip-bg: #fff;
+  --tooltip-text: #282a36;
+  --spinner-bg: #fff;
+  --spinner-fg: #757887;
+  --input-bg: #424654;
+}
+
+.light {
+  --overlay-bg: #323232;
+  --main-bg: #f5f7fb;
+  --card-bg: #fff;
+  --chat-section-bg: #fff;
+  --chat-author-text: #323232;
+  --chat-author-bg: #f5f7fb;
+  --text-primary: #323232;
+  --text-secondary: #9ea0aa;
+  --icon: #333333;
+  --icon-hover: #9ea0aa;
+  --tooltip-bg: #333333;
+  --tooltip-text: #fff;
+  --spinner-bg: #f5f7fb;
+  --spinner-fg: #333333;
+  --input-bg: #f5f7fb;
+}
+
+.blue {
+  --icon-hover: #458eed;
+  --chat-bot-bg: #458eed;
+  --chat-bot-text: #fff;
+  --input-focus-border: #458eed;
+  --button-bg: #458eed;
+  --button-border: #458eed;
+  --button-text: #fff;
+  --button-focus-bg: #fff;
+  --button-focus-text: #458eed;
+}
+
+.pink {
+  --icon-hover: #ea405f;
+  --chat-bot-bg: #ea405f;
+  --chat-bot-text: #fff;
+  --input-focus-border: #ea405f;
+  --button-bg: #ea405f;
+  --button-border: #ea405f;
+  --button-text: #fff;
+  --button-focus-bg: #fff;
+  --button-focus-text: #ea405f;
+}
+
+.green {
+  --icon-hover: #8bdb43;
+  --chat-bot-bg: #8bdb43;
+  --chat-bot-text: #fff;
+  --input-focus-border: #8bdb43;
+  --button-bg: #8bdb43;
+  --button-border: #8bdb43;
+  --button-text: #fff;
+  --button-focus-bg: #fff;
+  --button-focus-text: #8bdb43;
+}
+
+.purple {
+  --icon-hover: #885fd6;
+  --chat-bot-bg: #885fd6;
+  --chat-bot-text: #fff;
+  --input-focus-border: #885fd6;
+  --button-bg: #885fd6;
+  --button-border: #885fd6;
+  --button-text: #fff;
+  --button-focus-bg: #fff;
+  --button-focus-text: #885fd6;
+}
