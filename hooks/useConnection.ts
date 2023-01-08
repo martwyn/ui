@@ -59,7 +59,7 @@ const useConnection = () => {
     };
 
     if (personality.text.length) {
-      eventDataWithUser.personality = personality;
+      eventDataWithUser.personality = personality.text;
     }
 
     socket.emit(name, eventDataWithUser);
