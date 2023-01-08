@@ -3,11 +3,16 @@ import HelpIcon from "../../components/helpIcon";
 import Label from "../../components/label";
 import Textarea from "../../components/textarea";
 import Tooltip from "../../components/tooltip";
-import usePersonality, { personalityOptions } from "../../hooks/usePersonality";
+import usePersonality from "../../hooks/usePersonality";
+import AddPersonality from "./addPersonality";
 
 const Personality = () => {
-  const { personality, updatePersonalityText, setPersonalityFromKey } =
-    usePersonality();
+  const {
+    personality,
+    personalityOptions,
+    updatePersonalityText,
+    setPersonalityFromKey,
+  } = usePersonality();
   const onTextareaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     updatePersonalityText(event.target.value);
   };
@@ -49,16 +54,18 @@ const Personality = () => {
       <Label>Or choose from a predefined personality</Label>
       <div className="flex mt-2">
         <div className="flex w-full">
-          {Object.values(personalityOptions).map((option) => (
+          {Object.values(personalityOptions()).map((option) => (
             <div
               className="flex items-center justify-center w-16 h-16 mr-4 rounded-full cursor-pointer hover:bg-icon-hover"
               onClick={() => setPersonalityFromKey(option.key)}
+              key={option.key}
             >
               <Tooltip text={option.tooltip} direction="right">
                 <span className="text-5xl">{option.emoji}</span>
               </Tooltip>
             </div>
           ))}
+          <AddPersonality />
         </div>
       </div>
     </>

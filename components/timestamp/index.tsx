@@ -5,9 +5,10 @@ interface Props {
 }
 
 const Timestamp = ({ datetime }: Props) => {
+  console.log(datetime);
   return (
     <p className="my-4 text-sm text-center text-gray-400 uppercase">
-      {format(datetime, "Lo LLL, h:mmaaa")}
+      {format(datetime, "do LLL, h:mmaaa")}
     </p>
   );
 };

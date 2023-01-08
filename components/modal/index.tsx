@@ -14,14 +14,14 @@ const Modal = ({ children, onClose, className }: Props) => {
   return (
     <>
       <div
-        className={`${styles.overlay} fixed z-10 cursor-pointer top-0 right-0 bottom-0 left-0`}
+        className={`${styles.overlay} fixed z-40 cursor-pointer top-0 right-0 bottom-0 left-0`}
         onClick={onClose}
       />
       <div
         className={cn(
           className,
           styles.container,
-          `bg-card-bg absolute-center cursor-default rounded shadow z-20 p-6`
+          `bg-card-bg absolute-center cursor-default rounded shadow z-50 p-6`
         )}
         onClick={(e) => e.stopPropagation()}
       >

@@ -1,3 +1,4 @@
+import cuid from "cuid";
 import { useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 
@@ -8,7 +9,7 @@ interface PersonalityOption {
   tooltip: string;
 }
 
-export const personalityOptions: {
+export const defaultPersonalityOptions: {
   [key: string]: PersonalityOption;
 } = {
   default: {
@@ -34,11 +35,13 @@ export const personalityOptions: {
 interface Personality {
   text: string;
   selectedPersonalityKey: string;
+  customPersonalities: PersonalityOption[];
 }
 
 const defaultPersonality: Personality = {
   text: "",
   selectedPersonalityKey: "default",
+  customPersonalities: [],
 };
 const personalityAtom = atomWithStorage<Personality>(
   "personality",
@@ -56,15 +59,40 @@ const usePersonality = () => {
   const clearPersonality = () => {
     setPersonality(defaultPersonality);
   };
+  const personalityOptions = () => {
+    return Object.values(defaultPersonalityOptions).concat(
+      personality.customPersonalities
+    );
+  };
   const setPersonalityFromKey = (key: string) => {
-    if (!personalityOptions[key]) {
+    const foundPersonality = personalityOptions().find((p) => p.key === key);
+    if (!foundPersonality) {
       console.warn("Cannot find personality with key", key);
       return;
     }
 
     setPersonality({
+      ...personality,
       selectedPersonalityKey: key,
-      text: personalityOptions[key].text,
+      text: foundPersonality.text,
+    });
+  };
+
+  const addCustomPersonality = (emoji: string, text: string) => {
+    const key = cuid();
+    const newPersonality: PersonalityOption = {
+      key,
+      emoji,
+      text,
+      tooltip: "A custom personality",
+    };
+
+    setPersonality({
+      ...personality,
+      selectedPersonalityKey: key,
+      text,
+      customPersonalities:
+        personality.customPersonalities.concat(newPersonality),
     });
   };
 
@@ -73,6 +101,8 @@ const usePersonality = () => {
     clearPersonality,
     updatePersonalityText,
     setPersonalityFromKey,
+    addCustomPersonality,
+    personalityOptions,
   } as const;
 };
 
