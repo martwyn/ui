@@ -15,6 +15,12 @@ const useConnection = () => {
   const onResponse = (messageResponse: MessageResponse) => {
     updateMessageBody(messageResponse.id, messageResponse.response);
   };
+  const onError = (messageError: MessageError) => {
+    updateMessageBody(
+      messageError.id,
+      `There was an error: '${messageError.error}'`
+    );
+  };
   useEffect(() => {
     if (user.id) {
       socket.emit("authenticate", { userId: user.id });
@@ -46,8 +52,10 @@ const useConnection = () => {
 
   useEffect(() => {
     socket.on("response", onResponse);
+    socket.on("error", onError);
     return () => {
       socket.off("response");
+      socket.off("error");
     };
   });
 
