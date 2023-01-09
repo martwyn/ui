@@ -14,6 +14,7 @@
   --spinner-bg: #fff;
   --spinner-fg: #757887;
   --input-bg: #424654;
+  
 }
 
 .light {
@@ -44,6 +45,7 @@
   --button-text: #fff;
   --button-focus-bg: #fff;
   --button-focus-text: #458eed;
+  --link-text: #458eed;
 }
 
 .pink {
@@ -56,6 +58,7 @@
   --button-text: #fff;
   --button-focus-bg: #fff;
   --button-focus-text: #ea405f;
+  --link-text: #ea405f;
 }
 
 .green {
@@ -68,6 +71,7 @@
   --button-text: #fff;
   --button-focus-bg: #fff;
   --button-focus-text: #8bdb43;
+  --link-text: #8bdb43;
 }
 
 .purple {
@@ -80,4 +84,5 @@
   --button-text: #fff;
   --button-focus-bg: #fff;
   --button-focus-text: #885fd6;
+  --link-text: #885fd6;
 }

@@ -11,7 +11,13 @@ const UserName = () => {
   return (
     <>
       <Label>Your name</Label>
-      <Input type="text" name="name" value={user.name!} onChange={onChange} />
+      <Input
+        type="text"
+        name="name"
+        value={user.name!}
+        onChange={onChange}
+        minLength={2}
+      />
     </>
   );
 };

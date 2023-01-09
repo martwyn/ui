@@ -20,3 +20,8 @@ type MessageResponse = {
   id: string;
   response: string;
 };
+
+type MessageError = {
+  id: string;
+  error: string;
+};

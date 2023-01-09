@@ -5,7 +5,9 @@ import Input from "../components/input";
 import Label from "../components/label";
 import LocalStorageWrapper from "../containers/localStorageWrapper";
 import NoAuthWrapper from "../containers/noAuthWrapper";
+import OpenAIApiKey from "../containers/openAIApiKey";
 import ThemePicker from "../containers/themePicker";
+import UserName from "../containers/userName";
 import useUser from "../hooks/useUser";
 
 const Auth = () => {
@@ -21,9 +23,15 @@ const Auth = () => {
       <main className="flex items-center justify-center w-full h-screen">
         <Card title="Let's talk" showLogo>
           <form onSubmit={onSubmit}>
-            <Label>Your name</Label>
-            <Input type="text" name="name" required />
-            <ThemePicker />
+            <div className="mb-4">
+              <UserName />
+            </div>
+            <div className="mb-4">
+              <OpenAIApiKey />
+            </div>
+            <div className="mb-4">
+              <ThemePicker />
+            </div>
             <Button className="w-full mt-4 text-center">Go!</Button>
           </form>
         </Card>

@@ -28,7 +28,7 @@
   --button-text: #fff;
   --button-focus-bg: #fff;
   --button-focus-text: #458eed;
-}
+  --link-text: #458eed;}
 
 @import url('https://fonts.googleapis.com/css?family=Inter');
 
@@ -37,6 +37,10 @@ body {
   padding: 0;
   margin: 0;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'!important;
+}
+
+p a {
+  color: var(--link-text);
 }
 
 @supports (font-variation-settings: normal) {
